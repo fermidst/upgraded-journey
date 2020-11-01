@@ -19,14 +19,14 @@ namespace HRSystem.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("{employeeId}")]
+        [HttpGet("{id}")]
         public async Task<EmployeeResponseDto> GetEmployee(long id)
         {
             var result = await _employeeService.GetEmployeeAsync(id);
             return _mapper.Map<EmployeeResponseDto>(result);
         }
         
-        [HttpPut("{employeeId}")]
+        [HttpPut("{id}")]
         public async Task<EmployeeResponseDto> UpdateEmployee(long id, EmployeeRequestDto employee)
         {
             var result = await _employeeService.UpdateEmployeeAsync(id, employee);
@@ -40,15 +40,15 @@ namespace HRSystem.Controllers
             return _mapper.Map<EmployeeResponseDto>(result);
         }
         
-        [HttpDelete("{clientId}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteClient(long id)
         {
             await _employeeService.DeleteEmployeeAsync(id);
             return new NoContentResult();
         }
         
-        [HttpGet("/clients")]
-        public Employees GetClients()
+        [HttpGet("/employees")]
+        public Employees GetEmployees()
         {
             var result = _employeeService.GetEmployeesAsync();
             return new Employees

@@ -8,6 +8,8 @@ namespace HRSystem.Infrastructure
     public interface IHRSystemDbContext
     {
         DbSet<Employee> Employees { get; set; }
+        
+        DbSet<Position> Positions { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());
     }

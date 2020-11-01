@@ -17,6 +17,7 @@ namespace HRSystem
                 .AddDbContext<HRSystemDbContext>(builder =>
                     builder.UseSqlite(configuration.GetConnectionString("HRSystemDbContext")))
                 .AddScoped<IHRSystemDbContext, HRSystemDbContext>()
-                .AddScoped<IEmployeeService, EmployeeService>();
+                .AddScoped<IEmployeeService, EmployeeService>()
+                .AddScoped<IPositionService, PositionService>();
     }
 }

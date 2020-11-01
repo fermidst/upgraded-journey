@@ -9,6 +9,7 @@ namespace HRSystem.Mappers
         public AutoMapping()
         {
             CreateMap<Employee, EmployeeResponseDto>();
+            CreateMap<Position, PositionResponseDto>();
         }
     }
 }
