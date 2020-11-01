@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRSystem", "HRSystem\HRSystem.csproj", "{30B13911-2F09-4B68-817C-442338F27917}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRSystem.Infrastructure", "HRSystem.Infrastructure\HRSystem.Infrastructure.csproj", "{C6079023-6C6E-4010-9381-77B9BDF31276}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{30B13911-2F09-4B68-817C-442338F27917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30B13911-2F09-4B68-817C-442338F27917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30B13911-2F09-4B68-817C-442338F27917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6079023-6C6E-4010-9381-77B9BDF31276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6079023-6C6E-4010-9381-77B9BDF31276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6079023-6C6E-4010-9381-77B9BDF31276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6079023-6C6E-4010-9381-77B9BDF31276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
