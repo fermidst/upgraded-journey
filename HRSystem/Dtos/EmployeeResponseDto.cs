@@ -8,6 +8,6 @@
 
         public string Department { get; set; }
 
-        public string Position { get; set; }
+        public long PositionId { get; set; }
     }
 }

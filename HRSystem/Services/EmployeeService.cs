@@ -26,7 +26,7 @@ namespace HRSystem.Services
             var entity = await _dbContext.Employees.SingleOrDefaultAsync(e => e.Id == id);
             entity.FullName = employee.FullName;
             entity.Department = employee.Department;
-            entity.Position = employee.Position;
+            entity.PositionId = employee.PositionId;
             await _dbContext.SaveChangesAsync();
             return entity;
         }
@@ -37,7 +37,7 @@ namespace HRSystem.Services
             {
                 FullName = employee.FullName,
                 Department = employee.Department,
-                Position = employee.Position
+                PositionId = employee.PositionId
             });
             await _dbContext.SaveChangesAsync();
             return entry.Entity;
