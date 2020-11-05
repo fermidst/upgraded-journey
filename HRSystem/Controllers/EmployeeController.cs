@@ -34,14 +34,14 @@ namespace HRSystem.Controllers
         }
         
         [HttpPost("")]
-        public async Task<EmployeeResponseDto> CreateClient(EmployeeRequestDto employee)
+        public async Task<EmployeeResponseDto> CreateEmployee(EmployeeRequestDto employee)
         {
             var result = await _employeeService.CreateEmployeeAsync(employee);
             return _mapper.Map<EmployeeResponseDto>(result);
         }
         
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteClient(long id)
+        public async Task<ActionResult> DeleteEmployee(long id)
         {
             await _employeeService.DeleteEmployeeAsync(id);
             return new NoContentResult();

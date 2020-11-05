@@ -10,6 +10,7 @@ namespace HRSystem.Infrastructure
         DbSet<Employee> Employees { get; set; }
         
         DbSet<Position> Positions { get; set; }
+        DbSet<Department> Departments { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());
     }

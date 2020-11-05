@@ -10,6 +10,7 @@ namespace HRSystem.Mappers
         {
             CreateMap<Employee, EmployeeResponseDto>();
             CreateMap<Position, PositionResponseDto>();
+            CreateMap<Department, DepartmentResponseDto>();
         }
     }
 }

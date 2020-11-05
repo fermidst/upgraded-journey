@@ -11,6 +11,7 @@ namespace HRSystem
     {
         public static IServiceCollection AddProjectMappers(this IServiceCollection services) =>
             services.AddAutoMapper(typeof(Startup));
+
         public static IServiceCollection AddProjectServices(this IServiceCollection services,
             IConfiguration configuration) =>
             services
@@ -18,6 +19,7 @@ namespace HRSystem
                     builder.UseSqlite(configuration.GetConnectionString("HRSystemDbContext")))
                 .AddScoped<IHRSystemDbContext, HRSystemDbContext>()
                 .AddScoped<IEmployeeService, EmployeeService>()
-                .AddScoped<IPositionService, PositionService>();
+                .AddScoped<IPositionService, PositionService>()
+                .AddScoped<IDepartmentService, DepartmentService>();
     }
 }

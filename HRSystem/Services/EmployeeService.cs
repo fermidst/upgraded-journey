@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using HRSystem.Dtos;
 using HRSystem.Infrastructure;
@@ -23,9 +24,18 @@ namespace HRSystem.Services
 
         public async Task<Employee> UpdateEmployeeAsync(long id, EmployeeRequestDto employee)
         {
+            if (employee.DepartmentId < 1 || employee.PositionId < 1)
+            {
+                throw new ArgumentException("invalid ids");
+            }
             var entity = await _dbContext.Employees.SingleOrDefaultAsync(e => e.Id == id);
             entity.FullName = employee.FullName;
-            entity.Department = employee.Department;
+            entity.PassportSeries = employee.PassportSeries;
+            entity.PassportNumber = employee.PassportNumber;
+            entity.OtherInfo = employee.OtherInfo;
+            entity.LengthOfWork = employee.LengthOfWork;
+            entity.PreviousWorkPlace = employee.PreviousWorkPlace;
+            entity.DepartmentId = employee.DepartmentId;
             entity.PositionId = employee.PositionId;
             await _dbContext.SaveChangesAsync();
             return entity;
@@ -36,7 +46,12 @@ namespace HRSystem.Services
             var entry = await _dbContext.Employees.AddAsync(new Employee
             {
                 FullName = employee.FullName,
-                Department = employee.Department,
+                PassportSeries = employee.PassportSeries,
+                PassportNumber = employee.PassportNumber,
+                OtherInfo = employee.OtherInfo,
+                LengthOfWork = employee.LengthOfWork,
+                PreviousWorkPlace = employee.PreviousWorkPlace,
+                DepartmentId = employee.DepartmentId,
                 PositionId = employee.PositionId
             });
             await _dbContext.SaveChangesAsync();

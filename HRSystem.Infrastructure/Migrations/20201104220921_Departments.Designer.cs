@@ -2,14 +2,16 @@
 using HRSystem.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(HRSystemDbContext))]
-    partial class HRSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201104220921_Departments")]
+    partial class Departments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,29 +37,14 @@ namespace HRSystem.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DepartmentId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Department")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("LengthOfWork")
-                        .HasColumnType("REAL");
-
-                    b.Property<string>("OtherInfo")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("PassportNumber")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("PassportSeries")
-                        .HasColumnType("INTEGER");
-
                     b.Property<long>("PositionId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("PreviousWorkPlace")
-                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

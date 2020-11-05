@@ -28,9 +28,16 @@ namespace HRSystem.Infrastructure
                 builder.ToTable("Positions");
                 builder.HasKey(p => p.Id);
             });
+            modelBuilder.Entity<Department>(builder =>
+            {
+                builder.ToTable("Departments");
+                builder.HasKey(d => d.Id);
+            });
         }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Position> Positions { get; set; }
+        
+        public DbSet<Department> Departments { get; set; }
     }
 }
